@@ -9,8 +9,15 @@
         
     </head>
     <body>
-        {{-- layouts/profile.blade.phpを読み込む --}}
-        @extends('layouts.profile')
+        {{-- layouts/plofile.blade.phpを読み込む --}}
+        @extends('layouts.plofile' )
+        
+        
+        {{--plofile.blade.phpの@yield('title')に'Myプロフィール'を埋め込む --}}
+        @section('title', 'Myプロフィール' )
+        
+        {{--profile.blade.phpの@yield('contents')に以下のタグを埋め込む --}}
+        @section('contents' )
         
         <div class="container">
             <div class="row">
