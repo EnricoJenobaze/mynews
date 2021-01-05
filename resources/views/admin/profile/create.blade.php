@@ -5,12 +5,30 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>プロフィール</title>
-    </head>
-    
-    <body>
+        <title>Myプロフィール</title>
         
-      <h1>内容</h1>
-      
+    </head>
+    <body>
+        {{-- layouts/plofile.blade.phpを読み込む --}}
+        @extends('layouts.plofile' )
+        
+        
+        {{--plofile.blade.phpの@yield('title')に'Myプロフィール'を埋め込む --}}
+        @section('title', 'Myプロフィール' )
+        
+        {{--profile.blade.phpの@yield('contents')に以下のタグを埋め込む --}}
+        @section('contents' )
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    
+                    <h2>Myプロフィール</h2>
+                </div>
+            </div>
+        </div>
+        
+        @endsection
+        
     </body>
 </html>
