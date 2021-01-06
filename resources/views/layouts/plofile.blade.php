@@ -48,6 +48,7 @@
                               <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             
                             @else
+                              <ul class="navbar-nav">
                               <li class="nav-item dropdown">
                                   <a id="nav-barDropdown" class="nav-link dropdown-toggle" href="♯"
                                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -68,6 +69,7 @@
                                       </form>
                                   </div>
                               </li>
+                              </ul>
                             @endguest
                             
                         </ul>
@@ -78,7 +80,7 @@
             
             <main class="py-4">
                 {{-- コンテンツをここに入れるため@yieldで開けておきます --}}
-                @yiele ('contents')
+                @yield ('contents')
                 
             </main>
         </div>
