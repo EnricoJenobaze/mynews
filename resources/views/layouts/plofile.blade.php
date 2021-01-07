@@ -44,11 +44,14 @@
                         
                         <ul class="navbar-nav mr-auto">
                             
+                        </ul>
+                            
+                        <ul class="navbar-nav ml-auto">
+                            
                             @guest
                               <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             
                             @else
-                              <ul class="navbar-nav ml-auto">
                                 <li class="nav-item dropdown">
                                   <a id="nav-barDropdown" class="nav-link dropdown-toggle" href="♯"
                                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -69,7 +72,6 @@
                                       </form>
                                   </div>
                                 </li>
-                              </ul>
                             @endguest
                             
                         </ul>
