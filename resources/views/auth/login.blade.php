@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
   <div class="container">
@@ -46,7 +46,7 @@
                                   <div class="checkbox">
                                       <label>
                                           <input type="checkbox" name="remember" {{ old('remember')
-                                          ? 'checkd' '' }}>{{ __('messages.Remember Me') }}
+                                          ? 'checkd' : '' }}>{{ __('messages.Remember Me') }}
                                           </label>
                                   </div>
                               </div>
