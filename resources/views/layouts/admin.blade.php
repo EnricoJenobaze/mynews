@@ -43,6 +43,11 @@
                     <div class="collapse navbar collapse" id="navbarSupportedContents">
                         
                         <ul class="navbar-nav mr-auto">
+
+                        </ul>
+
+                        <ul class="navbar-nav ml-auto">
+
                             {{--　ログインしていなかったらログイン画面へのリンクを表示 --}}
                             @guest
                               <li><a class="nav-link" href="{{ route('login') }}"></a></li>

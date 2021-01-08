@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title', 'プロフィール')
+@section('title', 'ニュースの編集')
 
 @section('content')
    <div class="container">
        <div class="row">
            <div class="col-md-8 mx-auto">
-               <h2>プロフィール</h2>
-               <form action="{{ action('Admin\ProfileController@update') }}" method="post"
+               <h2>ニュース編集</h2>
+               <form action="{{ action('Admin\NewsController@update') }}" method="post"
                enctype="multipart/form-data">
                    @if (count($errors) > 0)
                        <ul>
@@ -16,30 +16,32 @@
                        </ul>
                        @endif
                        <div class="form-group row">
-                          <label class="col-md-2" for="title">名前</label>
+                          <label class="col-md-2" for="title">タイトル</label>
                           <div class="col-md-10">
-                             <input type="text" class="form-control" name="name" value="{{ $profile_form->name }}">
+                             <input type="text" class="form-control" name="title" value="{{ $news_form->title }}">
                           </div>
                        </div>
                        
                        <div class="form-group row">
-                          <label class="col-md-2" for="title">年齢</label>
+                          <label class="col-md-2" for="body">本文</label>
                           <div class="col-md-10">
-                             <input type="text" class="form-control" name="gender" value="{{ $profile_form->gender }}">
+                             <textared class="form-control" name="body" rows="20">{{ $news_form->body }}</textared>
                           </div>
                        </div>
                        
-                       <div class="form-group row">
-                          <label class="col-md-2" for="body">趣味</label>
+                       <div class="form-grouo row">
+                          <label class="col-md-2" for="image">画像</label>
                           <div class="col-md-10">
-                             <textared class="form-control" name="hobby" rows="20">{{ $profile_form->hobby }}</textared>
-                          </div>
-                       </div>
-                       
-                       <div class="form-group row">
-                          <label class="col-md-2" for="body">自己紹介欄</label>
-                          <div class="col-md-10">
-                             <textared class="form-control" name="introduction" rows="20">{{ $profile_form->introduction }}</textared>
+                             <input type="file" class="form-control-file" name="image">
+                             <div class="form-text text-info">
+                                設定中: {{ $news_form->image_path }}
+                             </div>
+                             
+                             <div class="form-check">
+                                <label class="form-check-label">
+                                   <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
+                                </label>
+                             </div>
                           </div>
                        </div>
                        
