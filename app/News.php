@@ -13,4 +13,11 @@ class News extends Model
         'title' => 'requied',
         'body' => 'requied',
         );
+        
+    // News Modelに関連付けを行う
+    public function histories()
+    {
+        return $this->hasMany('App\History');
+        
+    }
 }
