@@ -1,15 +1,15 @@
 <?php
 
+namespace App\Http\Controllers\Admin;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 use App\Profile;
 
 use App\History;
 
 use Carbon\Carbon;
-
-namespace App\Http\Controllers\Admin;
-
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
 {
@@ -22,6 +22,16 @@ class ProfileController extends Controller
     
     public function create()
     {
+      $this->validate($request, Profile::$rules);
+
+      $profile = new Profile;
+      $form = $request->all();
+      
+      unset($form['_token']);
+      
+      $profile->fill($form);
+      $profile->save();
+      
         return redirect('admin/profile/create');
     }
     
@@ -33,6 +43,8 @@ class ProfileController extends Controller
         }
         return view('admin.profile.edit', ['profile_form' => $profile]);
     }
+    
+    
     
     public function update(Request $request)
     {
@@ -52,5 +64,6 @@ class ProfileController extends Controller
         
         return redirect('admin/profile');
     }
+
 }
 

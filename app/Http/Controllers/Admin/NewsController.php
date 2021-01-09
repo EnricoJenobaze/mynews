@@ -1,15 +1,15 @@
 <?php
 
+namespace App\Http\Controllers\Admin;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 use App\News;
 
 use App\History;
 
 use Carbon\Carbon;
-
-namespace App\Http\Controllers\Admin;
-
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class NewsController extends Controller
 {
@@ -60,6 +60,16 @@ public function index(Request $request)
     }
     return view('admin.news.index', ['posts' => $posts, 'cond_title' =>cond_title]);
 }
+
+public function edit(Request $request)
+  {
+      // News Modelからデータを取得する
+      $news = News::find($request->id);
+      if (empty($news)) {
+        abort(404);    
+      }
+      return view('admin.news.edit', ['news_form' => $news]);
+  }
 
 
 
