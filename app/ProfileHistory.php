@@ -13,3 +13,4 @@ class ProfilHistory extends Model
         'edited_id' => 'required',
         );
 }
+
