@@ -55,6 +55,8 @@
                <div class="row mt-5">
                     <div class="col-md-4 mx-auto">
                         <h2>編集履歴</h2>
+                        
+                        // --下記追加-- //
                         <p>comment</p>
                         <ul class="list-group">
                             @if ($profile_form->histories != NULL)
