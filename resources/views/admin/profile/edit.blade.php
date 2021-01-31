@@ -57,7 +57,7 @@
                         <h2>編集履歴</h2>
                         
                         // --下記追加-- //
-                        <p>comment</p>
+                        <p>comment1</p>
                         <ul class="list-group">
                             @if ($profile_form->histories != NULL)
                                 @foreach ($profile_form->histories as $history)
